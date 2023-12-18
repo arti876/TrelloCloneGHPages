@@ -31,8 +31,7 @@ import {
   elementMovement,
 } from './functionEvent.js' // functionEvent
 import { startTime, } from './clock.js'; // часы
-import { v4 as uuidv4 } from 'uuid'; // рандом id
-import { randomCompleted, randomDay, randomTime } from './getRandom.js' // рандом статуса Todo, даты, времени
+// import { v4 as uuidv4 } from 'uuid'; // рандом id
 import { getDay, getTime } from './getData.js' // получить текущую дату и время
 import { updateCounter } from './updateCounter.js' // обновление счетчиков Todos
 import { createDiv,createButton, } from './htmlCreateElement.js' // создание элементов html
@@ -43,6 +42,7 @@ import { createTodoCard } from './createTodoCard.js' // создание нов�
 import { addNameInForm } from './addNameInForm.js' //добавить имена из загружаемых данных в форму
 import { trackScroll, goTop } from './goTod.js' //кнопка вверх
 import { createTodoObj } from './createTodoObj.js' //создать объект Todo
+import { randomCompleted, randomDay, randomTime, generateUUID } from './getRandom.js' // рандом статуса Todo, даты, времени
 
 const runTrelloApplication = async () => {
 // часы

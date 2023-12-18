@@ -1,12 +1,12 @@
 import { formInputTitle, formInputDescription, formSelectUser } from './refs.js'; // получение переменных
-import { v4 as uuidv4 } from 'uuid'; // рандом id
 import { getDay, getTime } from './getData.js' // получить текущую дату и время
+import { randomCompleted, randomDay, randomTime, generateUUID } from './getRandom.js' // рандом статуса Todo, даты, времени
 
 function createTodoObj() {
-  const userId = uuidv4();
+  const userId = generateUUID();
   const todo = {
     todo: {
-      id: uuidv4(),
+      id: generateUUID(),
       time: getTime(),
       day: getDay(),
       completed: 'todo',

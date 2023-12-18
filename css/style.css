@@ -1,0 +1,484 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  list-style-type: none;
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 10px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+:focus,
+:active,
+a:focus,
+a:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+img {
+  display: block;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: inherit;
+}
+
+button,
+input[type=submit] {
+  background-color: inherit;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+.go-top {
+  position: fixed; /* фиксированное позиционирование */
+  right: 25px; /* отступ слева 20px */
+  bottom: 25px; /* выравниваем по центру */
+  cursor: pointer; /* при наведении меняем курсор */
+  display: none; /* по умолчанию скрываем кнопку */
+  font-size: 20px;
+  color: rgba(0, 51, 153, 0.5);
+  border: 1px solid rgba(0, 51, 153, 0.5);
+  border-radius: 5px;
+  background-color: rgba(0, 51, 153, 0.1);
+  padding: 10px 7px;
+}
+
+/* меняем прозрачность при наведении мышкой */
+.go-top:hover {
+  color: rgba(0, 51, 153, 0.8);
+  border: 1px solid rgba(0, 51, 153, 0.8);
+  background-color: rgba(0, 51, 153, 0.15);
+}
+
+/* модификатор для отображения кнопки */
+.go-top--show {
+  display: block;
+}
+
+.trello {
+  padding: 25px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trello__wrapper {
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.board-clear {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.board-clear:hover {
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  position: sticky;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f3c1ff;
+  border-radius: 10px;
+  padding: 30px 50px;
+  margin-bottom: 25px;
+}
+.header__logo {
+  font-size: 24px;
+  color: #000000;
+  font-weight: 600;
+}
+.header__time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  max-width: 90px;
+  text-align: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  border: 1px solid rgba(0, 0, 0, 0.862745098);
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 5px 15px 5px;
+  font-size: 16px;
+}
+
+.board {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 20px;
+}
+
+.task-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  border: 2px solid #828282;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.task-list__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 15px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+.task-list__title, .task-list__counters {
+  color: #fff;
+  font-weight: 600;
+}
+.task-list__header--todo, .task-list__btn--add-todo {
+  background-color: #009b68;
+}
+.task-list__header--in-progress {
+  background-color: #828282;
+}
+.task-list__header--done, .task-list__btn--del-all {
+  background-color: #006d9b;
+}
+.task-list__body {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  min-height: 300px;
+  gap: 15px;
+  padding: 15px;
+}
+.task-list__footer {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+.task-list__btn {
+  width: 100%;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.task-list__btn:hover {
+  color: #000000;
+  background-color: #f3c1ff;
+}
+
+.task {
+  display: -ms-grid;
+  display: grid;
+  gap: 25px;
+  background-color: #faebd7;
+  border-radius: 15px;
+  padding: 10px 15px;
+  -ms-grid-row-align: start;
+      align-self: start;
+}
+.task__header {
+  display: -ms-grid;
+  display: grid;
+  gap: 15px;
+}
+.task__title, .task__user, .task__time, .task__date {
+  font-weight: 900;
+}
+.task__btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 7px;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+.task__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.task__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 13px;
+  font-weight: 900;
+}
+.task__date-container {
+  text-align: end;
+}
+.task button {
+  color: #5b5b5b;
+  background-color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.task button:hover {
+  color: #000000;
+  background-color: #f3c1ff;
+}
+
+.task--todo {
+  background-color: rgba(1, 152, 102, 0.3);
+}
+
+.task--in-progress {
+  background-color: rgba(130, 130, 130, 0.3);
+}
+
+.task--done {
+  background-color: rgba(0, 107, 153, 0.3);
+}
+
+.task-list--todo {
+  border: 2px solid #009b68;
+}
+
+.task-list--in-progress {
+  border: 2px solid #828282;
+}
+
+.task-list--done {
+  border: 2px solid #006d9b;
+}
+
+.active-element {
+  opacity: 0.3;
+  background-color: #f3c1ff;
+}
+
+.form-add-todo {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+.form-add-todo__container-main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 15px auto 15px 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 15px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 450px;
+  background-color: #009b68;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+}
+.form-add-todo__input-title, .form-add-todo__input-description {
+  background-color: #fff;
+  padding: 5px;
+}
+.form-add-todo__input-title {
+  width: 50%;
+  border-radius: 5px;
+}
+.form-add-todo__input-description {
+  width: 100%;
+  min-height: 200px;
+  border-radius: 5px;
+  resize: none;
+}
+.form-add-todo__footer, .form-add-todo__btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.form-add-todo__user {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 10px;
+}
+.form-add-todo__btn-container {
+  gap: 10px;
+}
+.form-add-todo__btn-container button {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 10px;
+}
+
+.form-add-todo--vis {
+  display: block;
+}
+
+.invalid-control {
+  outline: 3px solid #ff4949;
+}
+
+.warning {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 101;
+}
+.warning__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  width: 300px;
+  background-color: #009b68;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+}
+.warning__text {
+  font-size: 24px;
+}
+.warning__btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 35px;
+}
+.warning button {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.warning button:hover {
+  background-color: #f3c1ff;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.warning--vis {
+  display: block;
+}
+
+.warning__btn-confirm--none {
+  display: none;
+}
