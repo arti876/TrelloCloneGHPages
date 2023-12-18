@@ -46,26 +46,26 @@ import { randomCompleted, randomDay, randomTime, generateUUID } from './getRando
 
 const runTrelloApplication = async () => {
 // часы
-startTime();
+await startTime();
 
 // загрузаем данные в localStorage с сервера, если их нету
 if (!localStorage.length || !getData('todos')[0]) {
-  getTrelloData();
+  await getTrelloData();
 };
 
 // получаем массив данных из localStorage
-let todosGetData = getData('todos');
+let todosGetData = await getData('todos');
 
 // загрузка имен юзеров в модальную форму добавления дел
-addNameInForm(todosGetData);
+await addNameInForm(todosGetData);
 
 // отрисовка карточек дел из localStorage
-todosGetData.forEach(todo => {
+await todosGetData.forEach(todo => {
   createTodoCard(todo);
 });
 
 // обновление счетчиков
-updateCounter();
+await updateCounter();
 
   // скролл возврата к началу страницы
   // обработчик скролл вверх
