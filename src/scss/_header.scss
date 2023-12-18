@@ -1,0 +1,27 @@
+.header {
+  position: sticky;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  background-color: #f3c1ff;
+  border-radius: 10px;
+  padding: 30px 50px;
+  margin-bottom: 25px;
+  &__logo {
+    font-size: 24px;
+    color: #000000;
+    font-weight: 600;
+  }
+  &__time {
+    display: flex;
+    justify-content: start;
+    max-width: 90px;
+    text-align: center;
+    justify-self: end;
+    border: 1px solid #000000dc;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 5px 15px 5px;
+    font-size: 16px;
+  }
+}

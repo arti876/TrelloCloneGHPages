@@ -1,0 +1,139 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  // grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+  gap: 20px;
+}
+
+.task-list {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border: 2px solid #828282;
+  border-radius: 15px;
+  overflow: hidden;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    align-self: flex-start;
+  }
+  &__title,
+  &__counters {
+    color: #fff;
+    font-weight: 600;
+  }
+  &__header--todo,
+  &__btn--add-todo {
+    background-color: #009b68;
+  }
+  &__header--in-progress {
+    background-color: #828282;
+  }
+  &__header--done,
+  &__btn--del-all {
+    background-color: #006d9b;
+  }
+  &__body {
+    display: grid;
+    align-content: flex-start;
+    min-height: 300px;
+    gap: 15px;
+    padding: 15px;
+  }
+  &__footer {
+    align-self: end;
+  }
+  &__btn {
+    width: 100%;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+    transition: 0.3s;
+    &:hover {
+      color: #000000;
+      background-color: #f3c1ff;
+    }
+  }
+}
+
+.task {
+  display: grid;
+  gap: 25px;
+  background-color: #faebd7;
+  border-radius: 15px;
+  padding: 10px 15px;
+  align-self: start;
+  &__header {
+    display: grid;
+    gap: 15px;
+  }
+  &__title,
+  &__user,
+  &__time,
+  &__date{
+    font-weight: 900;
+  }
+  &__btn-container {
+    display: flex;
+    gap: 7px;
+    justify-self: end;
+  }
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 13px;
+    font-weight: 900;
+  }
+  &__user{
+
+  }
+  &__date-container{
+    text-align: end;
+  }
+  button {
+    color: #5b5b5b;
+    background-color: #ffffff;
+    padding: 3px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    &:hover {
+      color: #000000;
+      background-color: #f3c1ff;
+    }
+  }
+}
+
+.task--todo {
+  background-color: rgba(1, 152, 102, 0.3);
+}
+
+.task--in-progress {
+  background-color: rgba(130, 130, 130, 0.3);
+}
+
+.task--done {
+  background-color: rgba(0, 107, 153, 0.3);
+}
+
+.task-list--todo {
+  border: 2px solid #009b68;
+}
+.task-list--in-progress {
+  border: 2px solid #828282;
+}
+.task-list--done {
+  border: 2px solid #006d9b;
+}
+
+.active-element {
+  opacity: 0.3;
+  background-color: #f3c1ff;
+}

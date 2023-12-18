@@ -1,0 +1,27 @@
+.trello {
+  padding: 25px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  // padding: 0 50px;
+}
+
+.trello__wrapper{
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.board-clear {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 10px;
+  transition: .3s;
+}
+
+.board-clear:hover {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+}

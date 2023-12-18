@@ -1,0 +1,68 @@
+.form-add-todo {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  &__container-main {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    gap: 15px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    background-color: #009b68;
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.2),
+      0 16px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+  }
+  &__input-title,
+  &__input-description {
+    background-color: #fff;
+    padding: 5px;
+  }
+  &__input-title {
+    width: 50%;
+    border-radius: 5px;
+  }
+  &__input-description {
+    width: 100%;
+    min-height: 200px;
+    border-radius: 5px;
+    resize: none;
+  }
+  &__footer,
+  &__btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__user {
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 3px 10px;
+  }
+  &__btn-container {
+    gap: 10px;
+    button {
+      border-radius: 5px;
+      background-color: #fff;
+      padding: 3px 10px;
+    }
+  }
+}
+
+.form-add-todo--vis {
+  display: block;
+}
+
+.invalid-control {
+  outline: 3px solid #ff4949;
+}

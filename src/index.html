@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./scss/style.scss">
+  <script type="module" src="./js/index.js" defer></script>
+  <title>TrelloClone</title>
+</head>
+
+<body>
+  <div class="trello">
+    <div class="wrapper trello__wrapper">
+      <button class="board-clear">BOARD CLEAR</button>
+      <div class="header">
+        <div class="header__logo">Trello</div>
+        <div class="header__time"></div>
+      </div>
+      <section class="board">
+
+        <div class="task-list task-list--todo">
+          <div class="task-list__header task-list__header--todo">
+            <div class="task-list__title task-list__title--todo">TODO</div>
+            <div class="task-list__counters task-list__counters--todo">0</div>
+          </div>
+          <div class="task-list__body task-list__body--todo">
+          </div>
+          <div class="task-list__footer">
+            <button class="task-list__btn task-list__btn--add-todo" type="button">Add todo</button>
+          </div>
+        </div>
+
+        <div class="task-list task-list--in-progress">
+          <div class="task-list__header task-list__header--in-progress">
+            <div class="task-list__title task-list__title--in-progress">IN PROGRESS</div>
+            <div class="task-list__counters task-list__counters--in-progress">0</div>
+          </div>
+          <div class="task-list__body task-list__body--in-progress">
+          </div>
+        </div>
+
+        <div class="task-list task-list--done">
+          <div class="task-list__header task-list__header--done">
+            <div class="task-list__title task-list__title--done">DONE</div>
+            <div class="task-list__counters task-list__counters--done">0</div>
+          </div>
+          <div class="task-list__body task-list__body--done">
+          </div>
+          <div class="task-list__footer">
+            <button class="task-list__btn task-list__btn--del-all" type="button">Delete all</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <form class="form-add-todo">
+      <div class="form-add-todo__container-main">
+        <div class="form-add-todo__header">
+          <label>
+            <input class="form-add-todo__input-title form-control required" type="text" name="title"
+              placeholder="Title">
+          </label>
+        </div>
+        <div class="form-add-todo__boby">
+          <label>
+            <textarea class="form-add-todo__input-description form-control required" name="description"
+              placeholder="Description"></textarea>
+          </label>
+        </div>
+        <div class="form-add-todo__footer">
+          <label>
+            <select class="form-add-todo__user form-control required" name="user">
+              <option value="">Select user</option>
+            </select>
+          </label>
+          <div class="form-add-todo__btn-container">
+            <button class="form-add-todo__btn-cancel" type="button" name="form-todo-cancel">Cancel</button>
+            <button class="form-add-todo__btn-confirm" type="button" name="form-todo-confirm">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="warning">
+      <div class="warning__container">
+        <div class="warning__text"></div>
+        <div class="warning__btn-container">
+          <button class="warning__btn-cancel" type="button" name="warning-cancel">Cancel</button>
+          <button class="warning__btn-confirm" type="button" name="warning-confirm">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="go-top">▲</div>
+</body>
+
+</html>
