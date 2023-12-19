@@ -169,7 +169,7 @@ function scrollСheck() {
 function showAllCards(taskList) {
   if (event.target.getAttribute('data-show') === "true") {
     taskList.style.height = 'auto';
-    event.target.textContent = 'Show all ▲';
+    event.target.textContent = 'Roll up ▲';
     event.target.setAttribute('data-show', "false");
   } else {
     taskList.style.height = '600px';
