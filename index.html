@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="js/index.js" defer></script>
+  <link rel="stylesheet" href="./scss/style.scss">
+  <script type="module" src="./js/index.js" defer></script>
   <title>TrelloClone</title>
 </head>
 
@@ -18,7 +18,6 @@
         <div class="header__time"></div>
       </div>
       <section class="board">
-
         <div class="task-list task-list--todo">
           <div class="task-list__header task-list__header--todo">
             <div class="task-list__title task-list__title--todo">TODO</div>
@@ -27,10 +26,10 @@
           <div class="task-list__body task-list__body--todo">
           </div>
           <div class="task-list__footer">
-            <button class="task-list__btn task-list__btn--add-todo" type="button">Add todo</button>
+            <button class="task-list__btn-show-all task-list__btn-show-all--todo" type="button" data-show="true">Show all ▼</button>
+            <button class="task-list__btn-add-todo" type="button">Add todo</button>
           </div>
         </div>
-
         <div class="task-list task-list--in-progress">
           <div class="task-list__header task-list__header--in-progress">
             <div class="task-list__title task-list__title--in-progress">IN PROGRESS</div>
@@ -38,8 +37,10 @@
           </div>
           <div class="task-list__body task-list__body--in-progress">
           </div>
+          <div class="task-list__footer">
+            <button class="task-list__btn-show-all task-list__btn-show-all--in-progress" type="button" data-show="true">Show all ▼</button>
+          </div>
         </div>
-
         <div class="task-list task-list--done">
           <div class="task-list__header task-list__header--done">
             <div class="task-list__title task-list__title--done">DONE</div>
@@ -48,7 +49,8 @@
           <div class="task-list__body task-list__body--done">
           </div>
           <div class="task-list__footer">
-            <button class="task-list__btn task-list__btn--del-all" type="button">Delete all</button>
+            <button class="task-list__btn-show-all task-list__btn-show-all--done" type="button" data-show="true">Show all ▼</button>
+            <button class="task-list__btn-del-all" type="button">Delete all</button>
           </div>
         </div>
       </section>

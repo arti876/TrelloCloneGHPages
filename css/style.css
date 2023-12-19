@@ -211,13 +211,13 @@ input::-ms-clear {
   color: #fff;
   font-weight: 600;
 }
-.task-list__header--todo, .task-list__btn--add-todo {
+.task-list__header--todo, .task-list__btn-add-todo, .task-list__btn-show-all--todo {
   background-color: #009b68;
 }
-.task-list__header--in-progress {
+.task-list__header--in-progress, .task-list__btn-show-all--in-progress {
   background-color: #828282;
 }
-.task-list__header--done, .task-list__btn--del-all {
+.task-list__header--done, .task-list__btn-del-all, .task-list__btn-show-all--done {
   background-color: #006d9b;
 }
 .task-list__body {
@@ -225,16 +225,28 @@ input::-ms-clear {
   display: grid;
   -ms-flex-line-pack: start;
       align-content: flex-start;
-  min-height: 300px;
+  height: 600px;
   gap: 15px;
   padding: 15px;
+  overflow-y: auto;
+}
+.task-list__body::-webkit-scrollbar {
+  width: 0;
 }
 .task-list__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
 }
-.task-list__btn {
+.task-list__footer button {
   width: 100%;
   color: #fff;
   font-weight: 600;
@@ -242,9 +254,12 @@ input::-ms-clear {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.task-list__btn:hover {
+.task-list__footer button:hover {
   color: #000000;
   background-color: #f3c1ff;
+}
+.task-list__btn-show-all {
+  display: none;
 }
 
 .task {

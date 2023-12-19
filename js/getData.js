@@ -4,7 +4,7 @@ function getDay() {
   const Month = data.getMonth();
   const Day = data.getDate();
 
-  return `${Day}-${Month}-${Year}`
+  return `${Day}-${Month + 1}-${Year}`
 }
 
 function getTime() {

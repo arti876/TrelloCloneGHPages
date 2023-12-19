@@ -16,10 +16,7 @@ async function getTrelloData() {
         user: usersObj[n.userId],
       }))
     })
-    .then(todos => {
-      // todos.length = 30;
-      return setData('todos', todos)
-    })
+    .then(todos => setData('todos', todos))
 }
 
 export { getTrelloData } // получение данных с jsonplaceholder

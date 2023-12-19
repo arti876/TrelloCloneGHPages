@@ -1,7 +1,7 @@
 const taskListBodyTodo = document.querySelector('.task-list__body--todo');
 const taskListBodyInProgress = document.querySelector('.task-list__body--in-progress');
 const taskListBodyDone = document.querySelector('.task-list__body--done');
-const taskListBtnAddTodo = document.querySelector('.task-list__btn--add-todo');
+const taskListBtnAddTodo = document.querySelector('.task-list__btn-add-todo');
 const formAddTodo = document.querySelector('.form-add-todo');
 const formInputTitle = document.querySelector('.form-add-todo__input-title');
 const formInputDescription = document.querySelector('.form-add-todo__input-description');
@@ -16,6 +16,10 @@ const warningBtnConfirm = document.querySelector('.warning__btn-confirm');
 const warningText = document.querySelector('.warning__text');
 const trelloWrapper = document.querySelector('.trello__wrapper');
 const goTopBtn = document.querySelector(".go-top");
+const taskListBtnShowAll = document.querySelector('.task-list__btn-show-all');
+const taskListBtnShowAllTodo = document.querySelector('.task-list__btn-show-all--todo');
+const taskListBtnShowAllInProgress = document.querySelector('.task-list__btn-show-all--in-progress');
+const taskListBtnShowAllDone = document.querySelector('.task-list__btn-show-all--done');
 
 export {
   taskListBodyTodo,
@@ -36,4 +40,8 @@ export {
   warningText,
   goTopBtn,
   trelloWrapper,
+  taskListBtnShowAll,
+  taskListBtnShowAllTodo,
+  taskListBtnShowAllInProgress,
+  taskListBtnShowAllDone,
 }

@@ -24,36 +24,49 @@
     font-weight: 600;
   }
   &__header--todo,
-  &__btn--add-todo {
+  &__btn-add-todo,
+  &__btn-show-all--todo {
     background-color: #009b68;
   }
-  &__header--in-progress {
+  &__header--in-progress,
+  &__btn-show-all--in-progress {
     background-color: #828282;
   }
   &__header--done,
-  &__btn--del-all {
+  &__btn-del-all,
+  &__btn-show-all--done {
     background-color: #006d9b;
   }
   &__body {
     display: grid;
     align-content: flex-start;
-    min-height: 300px;
+    height: 600px;
     gap: 15px;
     padding: 15px;
+    overflow-y: auto;
+  }
+  &__body::-webkit-scrollbar {
+    width: 0;
   }
   &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     align-self: end;
-  }
-  &__btn {
-    width: 100%;
-    color: #fff;
-    font-weight: 600;
-    padding: 10px;
-    transition: 0.3s;
-    &:hover {
-      color: #000000;
-      background-color: #f3c1ff;
+    button {
+      width: 100%;
+      color: #fff;
+      font-weight: 600;
+      padding: 10px;
+      transition: 0.3s;
+      &:hover {
+        color: #000000;
+        background-color: #f3c1ff;
+      }
     }
+  }
+  &__btn-show-all{
+    display: none;
   }
 }
 
@@ -71,7 +84,7 @@
   &__title,
   &__user,
   &__time,
-  &__date{
+  &__date {
     font-weight: 900;
   }
   &__btn-container {
@@ -92,10 +105,7 @@
     font-size: 13px;
     font-weight: 900;
   }
-  &__user{
-
-  }
-  &__date-container{
+  &__date-container {
     text-align: end;
   }
   button {

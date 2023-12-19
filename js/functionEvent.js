@@ -1,8 +1,31 @@
-import { formAddTodo, formInputTitle, formInputDescription, formВtnConfirm, formSelectUser } from './refs.js'; // получение переменных
 import { getDay, getTime } from './getData.js' // получить текущую дату и время
 import { updateCounter } from './updateCounter.js' // обновление счетчиков Todos
 import { createButton, } from './htmlCreateElement.js' // создание элементов html
 import { setData } from './localStorage.js'// запись-чтение данных localStorage
+import {
+  taskListBodyTodo,
+  taskListBtnAddTodo,
+  formAddTodo,
+  formInputTitle,
+  formInputDescription,
+  formВtnCancel,
+  formВtnConfirm,
+  formSelectUser,
+  controls,
+  board,
+  taskListBody,
+  taskListBodyInProgress,
+  taskListBodyDone,
+  warning,
+  warningBtnConfirm,
+  warningText,
+  goTopBtn,
+  trelloWrapper,
+  taskListBtnShowAll,
+  taskListBtnShowAllTodo,
+  taskListBtnShowAllInProgress,
+  taskListBtnShowAllDone,
+} from './refs.js'; // получение переменных
 
 // удалить все карточки дел
 function boardClear() {
@@ -122,6 +145,39 @@ function relocateTodoInDone(elem) {
   elem.querySelector('.task__date').textContent = getDay();
 }
 
+// проверка наличие скролла
+function scrollСheck() {
+  if (taskListBodyInProgress.scrollHeight > taskListBodyInProgress.clientHeight) {
+    taskListBtnShowAllInProgress.style.display = 'block';
+  } else {
+    taskListBtnShowAllInProgress.style.display = 'none';
+  }
+
+  if (taskListBodyTodo.scrollHeight > taskListBodyTodo.clientHeight) {
+    taskListBtnShowAllTodo.style.display = 'block';
+  } else {
+    taskListBtnShowAllTodo.style.display = 'none';
+  }
+  if (taskListBodyDone.scrollHeight > taskListBodyDone.clientHeight) {
+    taskListBtnShowAllDone.style.display = 'block';
+  } else {
+    taskListBtnShowAllDone.style.display = 'none';
+  }
+}
+
+// показать/скрыть карточки
+function showAllCards(taskList) {
+  if (event.target.getAttribute('data-show') === "true") {
+    taskList.style.height = 'auto';
+    event.target.textContent = 'Show all ▲';
+    event.target.setAttribute('data-show', "false");
+  } else {
+    taskList.style.height = '600px';
+    event.target.textContent = 'Show all ▼';
+    event.target.setAttribute('data-show', "true");
+  }
+}
+
 export {
   statusTaskСhange,
   relocateProgressInTodo,
@@ -133,4 +189,6 @@ export {
   boardClear,
   editTodo,
   elementMovement,
+  scrollСheck,
+  showAllCards,
 } // functionEvent
