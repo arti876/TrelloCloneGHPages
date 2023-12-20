@@ -88,6 +88,7 @@ const runTrelloApplication = async () => {
     // удалить все карточки дел
     if (event.target.classList.contains('board-clear')) {
       boardClear(updateCounter);
+      scrollСheck();
     }
   });
 
@@ -282,6 +283,7 @@ const runTrelloApplication = async () => {
       const taskDoneDelAll = todosGetData.filter(({ todo: { completed } }) => completed !== 'done');
       setData('todos', taskDoneDelAll);
       updateCounter();
+      scrollСheck();
     }
     // отменить удаление всех карточек done
     if (event.target.classList.contains('warning') || event.target.classList.contains('warning__btn-cancel')) {
